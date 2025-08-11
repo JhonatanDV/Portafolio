@@ -116,7 +116,7 @@ export default function ContactSection() {
                   name="name" 
                   required 
                   className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg focus:outline-none focus:border-portfolio-primary transition-colors text-white"
-                  placeholder="Jhonatan Eliecer Díaz Vásquez"
+                  placeholder="TU NOMBRE COMPLETO"
                   data-testid="input-name"
                 />
               </div>
