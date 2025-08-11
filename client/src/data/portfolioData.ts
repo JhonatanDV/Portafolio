@@ -45,13 +45,13 @@ export interface PortfolioData {
 // EDITAR: Personaliza estos datos con tu información real
 export const portfolioData: PortfolioData = {
   personal: {
-    name: "Jhonatan Eliecer Díaz Vásquez",
-    title: "Estudiante de Ingeniería",
-    description: "Estudiante de Ingeniería apasionado por el desarrollo full-stack y la innovación tecnológica",
-    bio: "Soy un estudiante de Ingeniería de Sistemas apasionado por la tecnología y el desarrollo de software. Mi viaje comenzó con la curiosidad de entender cómo funcionan las aplicaciones que usamos diariamente, lo que me llevó a explorar tanto el frontend como el backend.",
-    education: "Actualmente cursando el 7mo semestre de Ingeniería de Sistemas, he desarrollado proyectos utilizando diversas tecnologías modernas, siempre buscando crear soluciones innovadoras y eficientes que generen un impacto positivo.",
-    email: "tu@email.com",
-    location: "Tu Ciudad, País",
+    name: "Jhonatan Díaz",
+    title: "Estudiante de Ingeniería en Software",
+    description: "Me apasiona la tecnología, el aprendizaje continuo y la creación de soluciones innovadoras", 
+    bio: "Soy estudiante de Ingeniería en Software con interés en el desarrollo de aplicaciones, la resolución de problemas y el aprendizaje de nuevas tecnologías. Me considero una persona responsable, proactiva y con habilidades para trabajar en equipo. Busco crecer profesionalmente y aportar soluciones innovadoras en el ámbito tecnológico.",
+    education: "Estudiante de la Universidad Cooperativa de Colombia con un técnico en sistemas del SENA",
+    email: "jhonatandiaz918@gmail.com",
+    location: "Pasto, Colombia",
     profileImage: "/images/perfil.png",
   },
   social: [
