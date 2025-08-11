@@ -57,17 +57,17 @@ export const portfolioData: PortfolioData = {
   social: [
     {
       platform: "GitHub",
-      url: "https://github.com/tu-usuario",
+      url: "https://github.com/JhonatanDV",
       icon: "fab fa-github"
     },
     {
       platform: "LinkedIn", 
-      url: "https://linkedin.com/in/tu-perfil",
+      url: "https://www.linkedin.com/in/jhonatan-d%C3%ADaz-615985328/",
       icon: "fab fa-linkedin"
     },
     {
       platform: "Email",
-      url: "mailto:tu@email.com", 
+      url: "mailto:jhonatandiaz918@gmail.com", 
       icon: "fas fa-envelope"
     }
   ],
