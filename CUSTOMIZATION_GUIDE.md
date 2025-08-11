@@ -7,17 +7,17 @@ Esta guía te ayudará a modificar el portfolio con tu información personal pas
 ### Archivo principal: `client/src/data/portfolioData.ts`
 
 ```typescript
-// EDITAR: Cambia esta información por la tuya
+
 export const portfolioData: PortfolioData = {
   personal: {
-    name: "Tu Nombre Completo",           // ✏️ Tu nombre real
-    title: "Estudiante de Ingeniería",    // ✏️ Tu título/carrera
-    description: "Tu descripción aquí",   // ✏️ Frase que te describa
-    bio: "Tu biografía extendida...",     // ✏️ Historia personal
-    education: "Detalles de estudios...", // ✏️ Información académica
-    email: "tu@email.com",               // ✏️ Tu email real
-    location: "Tu Ciudad, País",         // ✏️ Tu ubicación
-    profileImage: "URL_DE_TU_FOTO",      // 📸 Enlace a tu foto
+    name: "Jhonatan Díaz",
+    title: "Estudiante de Ingeniería en Software",
+    description: "Me apasiona la tecnología, el aprendizaje continuo y la creación de soluciones innovadoras", 
+    bio: "Soy estudiante de Ingeniería en Software con interés en el desarrollo de aplicaciones, la resolución de problemas y el aprendizaje de nuevas tecnologías. Me considero una persona responsable, proactiva y con habilidades para trabajar en equipo. Busco crecer profesionalmente y aportar soluciones innovadoras en el ámbito tecnológico.",
+    education: "Estudiante de la Universidad Cooperativa de Colombia con un técnico en sistemas del SENA",
+    email: "jhonatandiaz918@gmail.com",
+    location: "Pasto, Colombia",
+    profileImage: "/images/perfil.png",
   },
-  // ... resto de la configuración
+
 }
