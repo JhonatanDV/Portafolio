@@ -45,14 +45,14 @@ export interface PortfolioData {
 // EDITAR: Personaliza estos datos con tu información real
 export const portfolioData: PortfolioData = {
   personal: {
-    name: "Tu Nombre Completo",
+    name: "Jhonatan Eliecer Díaz Vásquez",
     title: "Estudiante de Ingeniería",
     description: "Estudiante de Ingeniería apasionado por el desarrollo full-stack y la innovación tecnológica",
     bio: "Soy un estudiante de Ingeniería de Sistemas apasionado por la tecnología y el desarrollo de software. Mi viaje comenzó con la curiosidad de entender cómo funcionan las aplicaciones que usamos diariamente, lo que me llevó a explorar tanto el frontend como el backend.",
     education: "Actualmente cursando el 7mo semestre de Ingeniería de Sistemas, he desarrollado proyectos utilizando diversas tecnologías modernas, siempre buscando crear soluciones innovadoras y eficientes que generen un impacto positivo.",
     email: "tu@email.com",
     location: "Tu Ciudad, País",
-    profileImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&h=300",
+    profileImage: "/images/perfil.png",
   },
   social: [
     {
