@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "functions": {
+    "server/api/contact.ts": {
+      "runtime": "nodejs18.x"
+    }
+  },
+  "routes": [
+    {
+      "src": "/api/contact",
+      "dest": "/server/api/contact.ts"
+    }
+  ]
+}
