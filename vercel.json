@@ -1,10 +1,14 @@
 {
+  "version": 2,
   "functions": {
     "server/api/contact.ts": {
-      "runtime": "vercel-node@3.0.0"
+      "runtime": "nodejs18.x"
     }
   },
-  "builds": [
-    { "src": "server/api/contact.ts", "use": "@vercel/node" }
+  "routes": [
+    {
+      "src": "/api/contact",
+      "dest": "server/api/contact.ts"
+    }
   ]
 }
