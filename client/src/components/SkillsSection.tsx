@@ -11,9 +11,10 @@ export default function SkillsSection() {
   const databaseSkills = skills.filter(skill => skill.category === "database");
   const toolSkills = skills.filter(skill => skill.category === "tools");
 
-  const otherTechnologies = [
-    "Docker", "AWS", "Firebase", "Next.js", "Redux", "GraphQL"
-  ];
+  // Tecnologías organizadas por categorías para mejor visualización
+  const cloudAndDevOps = ["Docker", "AWS", "Firebase", "Linux", "Nginx"];
+  const frameworksAndLibraries = ["Next.js", "Redux", "GraphQL", "Jest", "Webpack"];
+  const designAndTools = ["Figma", "VS Code", "Postman", "Git", "Sass"];
 
   const renderSkillBar = (skill: any) => (
     <div 
@@ -87,20 +88,114 @@ export default function SkillsSection() {
           </div>
         </div>
 
-        {/* Additional Skills Tags */}
-        <div className="mt-16 text-center">
-          <h3 className="text-xl font-semibold mb-8">Otras Tecnologías</h3>
-          <div className="flex flex-wrap justify-center gap-3">
-            {otherTechnologies.map((tech, index) => (
-              <button 
-                key={index}
-                onClick={() => setSelectedTech(tech)}
-                className="px-4 py-2 bg-slate-800 text-portfolio-primary rounded-full text-sm hover:bg-portfolio-primary hover:text-white transition-all cursor-pointer transform hover:scale-105"
-                data-testid={`tech-tag-${tech.toLowerCase().replace(/[.\s]/g, '-')}`}
-              >
-                {tech}
-              </button>
-            ))}
+        {/* Additional Technologies - Organized by Categories */}
+        <div className="mt-16">
+          <h3 className="text-2xl font-semibold mb-8 text-center">Otras Tecnologías y Herramientas</h3>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Cloud & DevOps */}
+            <div className="bg-slate-800 p-6 rounded-xl">
+              <div className="flex items-center mb-4">
+                <div className="w-10 h-10 bg-gradient-to-r from-portfolio-primary to-portfolio-secondary rounded-lg flex items-center justify-center mr-3">
+                  <i className="fas fa-cloud text-white"></i>
+                </div>
+                <h4 className="text-lg font-semibold">Cloud & DevOps</h4>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {cloudAndDevOps.map((tech, index) => (
+                  <button 
+                    key={index}
+                    onClick={() => setSelectedTech(tech)}
+                    className="px-3 py-1 bg-slate-700 text-portfolio-primary rounded-full text-sm hover:bg-portfolio-primary hover:text-white transition-all cursor-pointer transform hover:scale-105"
+                    data-testid={`cloud-tech-${tech.toLowerCase().replace(/[.\s]/g, '-')}`}
+                  >
+                    {tech}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Frameworks & Libraries */}
+            <div className="bg-slate-800 p-6 rounded-xl">
+              <div className="flex items-center mb-4">
+                <div className="w-10 h-10 bg-gradient-to-r from-portfolio-secondary to-portfolio-accent rounded-lg flex items-center justify-center mr-3">
+                  <i className="fas fa-code-branch text-white"></i>
+                </div>
+                <h4 className="text-lg font-semibold">Frameworks & Librerías</h4>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {frameworksAndLibraries.map((tech, index) => (
+                  <button 
+                    key={index}
+                    onClick={() => setSelectedTech(tech)}
+                    className="px-3 py-1 bg-slate-700 text-portfolio-secondary rounded-full text-sm hover:bg-portfolio-secondary hover:text-white transition-all cursor-pointer transform hover:scale-105"
+                    data-testid={`framework-tech-${tech.toLowerCase().replace(/[.\s]/g, '-')}`}
+                  >
+                    {tech}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Design & Tools */}
+            <div className="bg-slate-800 p-6 rounded-xl">
+              <div className="flex items-center mb-4">
+                <div className="w-10 h-10 bg-gradient-to-r from-portfolio-accent to-portfolio-primary rounded-lg flex items-center justify-center mr-3">
+                  <i className="fas fa-tools text-white"></i>
+                </div>
+                <h4 className="text-lg font-semibold">Diseño & Herramientas</h4>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {designAndTools.map((tech, index) => (
+                  <button 
+                    key={index}
+                    onClick={() => setSelectedTech(tech)}
+                    className="px-3 py-1 bg-slate-700 text-portfolio-accent rounded-full text-sm hover:bg-portfolio-accent hover:text-white transition-all cursor-pointer transform hover:scale-105"
+                    data-testid={`design-tool-${tech.toLowerCase().replace(/[.\s]/g, '-')}`}
+                  >
+                    {tech}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Professional Skills Summary */}
+          <div className="mt-12 text-center bg-slate-800 p-8 rounded-xl">
+            <h4 className="text-xl font-semibold mb-4">Competencias Profesionales</h4>
+            <div className="grid md:grid-cols-4 gap-6 text-sm">
+              <div className="flex flex-col items-center">
+                <div className="w-16 h-16 bg-gradient-to-r from-portfolio-primary to-portfolio-secondary rounded-full flex items-center justify-center mb-3">
+                  <i className="fas fa-laptop-code text-2xl text-white"></i>
+                </div>
+                <h5 className="font-semibold text-portfolio-primary">Full-Stack Development</h5>
+                <p className="text-slate-400 mt-1">Frontend + Backend + Bases de datos</p>
+              </div>
+              
+              <div className="flex flex-col items-center">
+                <div className="w-16 h-16 bg-gradient-to-r from-portfolio-secondary to-portfolio-accent rounded-full flex items-center justify-center mb-3">
+                  <i className="fas fa-mobile-alt text-2xl text-white"></i>
+                </div>
+                <h5 className="font-semibold text-portfolio-secondary">Responsive Design</h5>
+                <p className="text-slate-400 mt-1">Mobile-first, cross-browser</p>
+              </div>
+              
+              <div className="flex flex-col items-center">
+                <div className="w-16 h-16 bg-gradient-to-r from-portfolio-accent to-portfolio-primary rounded-full flex items-center justify-center mb-3">
+                  <i className="fas fa-rocket text-2xl text-white"></i>
+                </div>
+                <h5 className="font-semibold text-portfolio-accent">Performance Optimization</h5>
+                <p className="text-slate-400 mt-1">SEO, Core Web Vitals</p>
+              </div>
+              
+              <div className="flex flex-col items-center">
+                <div className="w-16 h-16 bg-gradient-to-r from-portfolio-primary to-portfolio-secondary rounded-full flex items-center justify-center mb-3">
+                  <i className="fas fa-users text-2xl text-white"></i>
+                </div>
+                <h5 className="font-semibold text-portfolio-primary">Team Collaboration</h5>
+                <p className="text-slate-400 mt-1">Git, Code reviews, Agile</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
