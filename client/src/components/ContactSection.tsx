@@ -7,28 +7,49 @@ export default function ContactSection() {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    
+    const contactData = {
+      name: formData.get('name') as string,
+      email: formData.get('email') as string,
+      subject: formData.get('subject') as string,
+      message: formData.get('message') as string,
+    };
+
     try {
-      // TODO: Replace with actual form submission logic
-      // You can use services like EmailJS, Formspree, or your own API
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      toast({
-        title: "Mensaje enviado",
-        description: "¡Gracias por tu mensaje! Te contactaré pronto.",
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(contactData),
       });
-      
-      // Reset form
-      const form = e.target as HTMLFormElement;
-      form.reset();
+
+      const result = await response.json();
+
+      if (result.success) {
+        toast({
+          title: "¡Mensaje enviado!",
+          description: result.message || "Te contactaré pronto. También recibirás un email de confirmación.",
+        });
+        form.reset();
+      } else {
+        toast({
+          title: "Error al enviar",
+          description: result.message || "Hubo un problema al enviar tu mensaje. Intenta nuevamente.",
+          variant: "destructive",
+        });
+      }
     } catch (error) {
+      console.error('Error enviando mensaje:', error);
       toast({
-        title: "Error",
-        description: "Hubo un problema al enviar tu mensaje. Intenta nuevamente.",
+        title: "Error de conexión",
+        description: "No se pudo conectar con el servidor. Verifica tu conexión a internet.",
         variant: "destructive",
       });
     } finally {
@@ -116,7 +137,7 @@ export default function ContactSection() {
                   name="name" 
                   required 
                   className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg focus:outline-none focus:border-portfolio-primary transition-colors text-white"
-                  placeholder="TU NOMBRE COMPLETO"
+                  placeholder="Tu nombre completo"
                   data-testid="input-name"
                 />
               </div>

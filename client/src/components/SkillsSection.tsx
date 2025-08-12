@@ -1,7 +1,10 @@
+import { useState } from "react";
 import { portfolioData } from "@/data/portfolioData";
+import TechInfoModal from "./TechInfoModal";
 
 export default function SkillsSection() {
   const { skills } = portfolioData;
+  const [selectedTech, setSelectedTech] = useState<string | null>(null);
 
   const frontendSkills = skills.filter(skill => skill.category === "frontend");
   const backendSkills = skills.filter(skill => skill.category === "backend"); 
@@ -13,8 +16,13 @@ export default function SkillsSection() {
   ];
 
   const renderSkillBar = (skill: any) => (
-    <div key={skill.name} className="flex items-center justify-between" data-testid={`skill-${skill.name.toLowerCase().replace(/[.\s]/g, '-')}`}>
-      <span>{skill.name}</span>
+    <div 
+      key={skill.name} 
+      className="flex items-center justify-between cursor-pointer hover:bg-slate-700/50 p-2 rounded-lg transition-all group" 
+      onClick={() => setSelectedTech(skill.name)}
+      data-testid={`skill-${skill.name.toLowerCase().replace(/[.\s]/g, '-')}`}
+    >
+      <span className="group-hover:text-portfolio-primary transition-colors">{skill.name}</span>
       <div className="w-24 bg-slate-700 rounded-full h-2">
         <div 
           className="bg-current h-2 rounded-full transition-all duration-500"
@@ -84,17 +92,25 @@ export default function SkillsSection() {
           <h3 className="text-xl font-semibold mb-8">Otras Tecnologías</h3>
           <div className="flex flex-wrap justify-center gap-3">
             {otherTechnologies.map((tech, index) => (
-              <span 
+              <button 
                 key={index}
-                className="px-4 py-2 bg-slate-800 text-portfolio-primary rounded-full text-sm hover:bg-portfolio-primary hover:text-white transition-all cursor-default"
+                onClick={() => setSelectedTech(tech)}
+                className="px-4 py-2 bg-slate-800 text-portfolio-primary rounded-full text-sm hover:bg-portfolio-primary hover:text-white transition-all cursor-pointer transform hover:scale-105"
                 data-testid={`tech-tag-${tech.toLowerCase().replace(/[.\s]/g, '-')}`}
               >
                 {tech}
-              </span>
+              </button>
             ))}
           </div>
         </div>
       </div>
+
+      {/* Tech Info Modal */}
+      <TechInfoModal 
+        isOpen={selectedTech !== null}
+        onClose={() => setSelectedTech(null)}
+        techName={selectedTech || ""}
+      />
     </section>
   );
 }
