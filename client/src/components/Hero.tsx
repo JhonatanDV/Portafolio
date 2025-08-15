@@ -19,7 +19,7 @@ export default function Hero() {
         {/* Profile photo placeholder with glowing border */}
         <div className="w-32 h-32 mx-auto mb-8 rounded-full border-4 border-accent-purple shadow-2xl shadow-purple-500/50 overflow-hidden">
           <img 
-            src="/profile.jpg"
+            src="/perfil.png"
             alt="Jhonatan Díaz" 
             className="w-full h-full object-cover" 
           />
