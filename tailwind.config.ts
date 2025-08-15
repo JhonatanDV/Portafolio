@@ -6,14 +6,19 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        inter: ['Inter', 'sans-serif'],
-        sans: ['Inter', 'sans-serif'],
-        serif: ['Georgia', 'serif'],
-        mono: ['Fira Code', 'Consolas', 'monospace'],
+        'inter': ['Inter', 'sans-serif'],
+        sans: ["var(--font-sans)"],
+        serif: ["var(--font-serif)"],
+        mono: ["var(--font-mono)"],
       },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        'dark-blue': 'var(--dark-blue)',
+        'medium-blue': 'var(--medium-blue)',
+        'light-blue': 'var(--light-blue)',
+        'accent-purple': 'var(--accent-purple)',
+        'accent-blue': 'var(--accent-blue)',
         card: {
           DEFAULT: "var(--card)",
           foreground: "var(--card-foreground)",
@@ -62,10 +67,6 @@ export default {
           border: "var(--sidebar-border)",
           ring: "var(--sidebar-ring)",
         },
-        // Portfolio specific colors
-        'portfolio-primary': '#6366F1',
-        'portfolio-secondary': '#8B5CF6', 
-        'portfolio-accent': '#06B6D4',
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -89,25 +90,21 @@ export default {
             height: "0",
           },
         },
-        fadeIn: {
-          from: { opacity: "0" },
-          to: { opacity: "1" },
-        },
-        slideUp: {
-          from: { transform: "translateY(30px)", opacity: "0" },
-          to: { transform: "translateY(0)", opacity: "1" },
-        },
-        float: {
-          "0%, 100%": { transform: "translateY(0px)" },
-          "50%": { transform: "translateY(-10px)" },
+        bounce: {
+          "0%, 100%": {
+            transform: "translateY(0)",
+            animationTimingFunction: "cubic-bezier(0.8, 0, 1, 1)",
+          },
+          "50%": {
+            transform: "translateY(-25%)",
+            animationTimingFunction: "cubic-bezier(0, 0, 0.2, 1)",
+          },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "fade-in": "fadeIn 0.6s ease-in-out",
-        "slide-up": "slideUp 0.6s ease-out", 
-        "float": "float 3s ease-in-out infinite",
+        bounce: "bounce 1s infinite",
       },
     },
   },
