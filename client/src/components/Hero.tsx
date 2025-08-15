@@ -1,5 +1,5 @@
 import { ChevronDown, Github, Linkedin, Mail } from "lucide-react";
-
+import profileImage from "@assets/profile.jpg";
 export default function Hero() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -20,7 +20,7 @@ export default function Hero() {
         {/* Profile photo placeholder with glowing border */}
         <div className="w-32 h-32 mx-auto mb-8 rounded-full border-4 border-accent-purple shadow-2xl shadow-purple-500/50 overflow-hidden">
           <img 
-            src="/profile.jpg" 
+            src={profileImage}
             alt="Jhonatan Díaz" 
             className="w-full h-full object-cover" 
           />
