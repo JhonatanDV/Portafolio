@@ -20,7 +20,7 @@ export default function Hero() {
         {/* Profile photo placeholder with glowing border */}
         <div className="w-32 h-32 mx-auto mb-8 rounded-full border-4 border-accent-purple shadow-2xl shadow-purple-500/50 overflow-hidden">
           <img 
-            src="https://drive.google.com/file/d/1Fa1FKiIiUIFYX4CC4-aA6Z_P6N_YGzBq/view?usp=drive_link" 
+            src="/profile.jpg" 
             alt="Jhonatan Díaz" 
             className="w-full h-full object-cover" 
           />
